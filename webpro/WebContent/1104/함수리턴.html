@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div{
+ border : 1px solid blue; 
+ margin : 20px;
+ padding : 10px;
+ height : 100px;
+ font-size : 1.2em;
+}
+</style>
+<script>
+function proc1(){
+	
+	su1 = parseInt(window.prompt("첫번째 수 입력,1~100"));   
+	su2 = parseInt(window.prompt("첫번째 수 입력,1~100"));
+	
+	let res = su1 + su2; //지역변수라서 리턴으로 뽑음
+	
+	return res; 
+}
+  window.onload = function(){
+	  
+	  //함수호출
+	  vsum = proc1(); //리턴값을 받을 변수 vsum! 
+	  
+	  // id=result 검색 
+	  vres = document.getElementById('result');
+	  
+	  str = `첫번째 수 : ${su1} <br>`
+	  str += `두번째 수 : ${su2} <br>`
+	  str += `${su1} + ${su2} = ${vsum} <br>`
+	  vres.innerHTML = str;
+  }
+</script>
+</head>
+<body>
+<div id="result"></div>
+</body>
+</html>

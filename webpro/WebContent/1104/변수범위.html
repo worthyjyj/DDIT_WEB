@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function proc1(a,b){
+  res = a+b; //var를 안썻기 때문에 전역변수 
+  print(a,b);
+}
+function proc2(){
+	// 입력 받기 
+	 var su1 = parseInt(window.prompt("첫번째수 입력"));
+	 var su2 = parseInt(window.prompt("두번째수 입력"));
+
+	 res = su1 + su2; 
+	
+	print(su1,su2);
+}
+function print(a,b){
+	str ="첫번째 값=" + a + "<br>";
+	str += "두번째 값=" + b + "<br>";
+// 	str += a + "+" + b + "=" + res + "<br>";
+	str +=`${a} + ${b} = ${res} <br>`
+	
+	//id=result를 검색
+	vres = document.getElementById('result');
+	vres.innerHTML = str; 
+}
+</script>
+</head>
+<body>
+<pre>
+백틱``````을 이용한 템플릿 문자열 
+``안에서 변수와 일반 문자열을 만든다
+변수와 일반문자열사이에 + 기호를 사용하지 않는다 
+변수는 ${변수}
+</pre>
+<input type="button" value="확인" onclick="proc1(10,4)"> <!-- 닫는태그 없음 -->
+<button type="button" onclick="proc2()">확인</button>
+
+<br>
+<br>
+<div id="result"></div>
+
+
+</body>
+</html>

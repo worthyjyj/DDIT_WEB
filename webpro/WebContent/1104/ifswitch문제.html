@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href="../css/public.css">
+
+<script>
+
+input = () =>{
+	//입력 
+	su1 = parseInt(prompt("첫번째 수 입력"));
+	su2 = parseInt(prompt("두번째 수 입력"));
+	op = prompt("연산자 입력" ,"+-*/");
+}
+
+function proc1(){
+	
+
+// proc1 = function(){} 이렇게도 함수 정의할 수 있음 
+// proc1 = () => {} //람다함수, 화살표함수 
+
+
+	input();
+	
+	
+	//계산
+	if(op == "+"){
+	  res = su1 + su2;
+	}else if(op == "-"){
+	  res = su1 - su2;
+	}else if(op == "*"){
+	  res = su1 * su2;
+	}else if(op == "/"){
+	  res = su1 / su2;
+	  res = res.toFixed(2); //소숫점 변환  
+	}
+	
+// 	res = su1 op su2; 이건 왜 안될까? 아! 문자열이니까 인식이 안되징~~
+	
+	//출력 
+	str = `${su1} ${op} ${su2} = ${res} <br>`;
+	
+	//id = result1인 요소를 검색 
+// 	vres = document.getElementById('result1');
+	vres = document.querySelector('#result1');
+	
+	vres.innerHTML = str; 
+}
+
+proc2 = () =>{
+	
+	input();
+	
+	switch(op){ //근데 proc1()이 먼저 수행되어야만 값이 있음. 
+	case "+" : 
+		res = su1 + su2;
+		break;
+	case "-" : 
+		res = su1 - su2;	
+		break;
+	case "*" : 
+		res = su1 * su2;
+		break;
+	case "/" : 
+		res = su1 / su2;
+	    res = res.toFixed(2);
+		break;
+	}
+	
+	//출력 
+	str = `${su1} ${op} ${su2} = ${res} <br>`;
+	
+	//id = result2인 요소를 검색 
+// 	vres = document.getElementById('result2');
+	vres = document.querySelector('#result2');
+	
+	vres.innerHTML = str; 
+
+}
+
+proc3 = () =>{
+	
+	//입력
+	first = prompt("첫번째 사람","가위바위보");
+	second = prompt("두번째 사람", "가위바위보");
+	
+	//계산 
+	if(first == second){
+		str = "비겼습니다."
+	}else if(first == "가위" && second == "보" || 
+		first == "바위" && second == "가위" ||
+		first == "보" && second == "바위")
+		{str = "첫번째 사람이 이겼습니다."
+    }else{
+    	str = "두번째 사람이 이겼습니다."
+    }
+	
+    //출력
+	res = `첫번째 사람 : ${first} <br>`;
+	res += `두번째 사람 : ${second} <br>`;
+	res += `결과 : ${str} <br>`;
+	
+	vres = document.querySelector('#result3');
+	vres.innerHTML = res; 
+}
+</script>
+</head>
+<body>
+<div class="box box1"> <!-- 클래스 이름이 2개가 될 수 있음 -->
+  <p>버튼 클릭시 2개의 수와 연산자를 입력받아 연산을 수행한다</p>
+  <p>if문 이용</p>
+  <input type="button" value="확인" onclick="proc1()">
+  <br><br>
+  <div id="result1"></div>
+</div>
+
+<div class="box box2"> <!-- 클래스 이름이 2개가 될 수 있음 -->
+  <p>버튼 클릭시 2개의 수와 연산자를 입력받아 연산을 수행한다</p>
+  <p>switch문 이용</p>
+  <input type="button" value="확인" onclick="proc2()">
+  <br><br>
+  <div id="result2"></div>
+</div>
+
+<div class="box box3"> <!-- 클래스 이름이 2개가 될 수 있음 -->
+  <p>버튼 클릭시 두사람의 가위바위보를 입력. 출력</p>
+  <p>if문</p>
+  <input type="button" value="확인" onclick="proc3()">
+  <br><br>
+  <div id="result3"></div>
+</div>
+
+</body>
+</html>
+

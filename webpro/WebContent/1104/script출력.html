@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+ div{
+  border : 2px dotted blue;
+  margin : 20px;
+  padding : 20px;
+  font-size : 1.5em;
+  height : 100px; 
+ }
+ textarea {
+  font-size : 1.5em;
+  padding : 20px;
+ }
+
+</style>
+
+
+</head>
+<body>
+<pre>
+출력하기 
+window.alert("메세지")
+innerHTML : 출력 내용에 html태그가 포함 
+innerText / textContent : 출력 내용에 html태그가 포함 되지 않는 문장
+value : 입력요소에 출력 - input type=text, textarea 
+</pre>
+
+<h2>innerHTML을 이용한 출력</h2>
+<div id="result"></div>
+<br>
+<h2>value를 이용한 출력</h2>
+<textarea rows="10" cols="50"></textarea> 
+<br><br>
+
+<script>
+  
+  
+  
+  var today = new Date(); 
+  day1 = today.toLocaleString(); //var없이 쓸수도있음. 
+  
+//   window.alert(today + "\n" + day1);
+  
+   //--------------------------------
+  //div요소에 출력 - innerHTML / innerText / textContent
+  //div요소를 검색 
+  vres = document.getElementById('result')
+  
+  str = today + "<br>"; 
+  str += day1 + "<br>";
+  
+  vres.innerHTML = str;
+//   vres.innerText = str; 
+  
+  
+   //--------------------------------
+   //textarea출력 -value를 이용
+   //요소 검색 
+   
+   vres = document.getElementsByTagName('textarea'); //배열: 해당태그가 여러개일 수 있으니까  
+   str = today + "\n"; //textarea는 \n으로 줄바꿈
+   str += day1 + "\n"; 
+   vres[0].value = str; 
+  
+   //--------------------------------
+   console.log(str);
+   //--------------------------------
+   str = today + "<br>"; 
+   str += day1 + "<br>";
+   document.write(str);
+</script>
+</body>
+</html>

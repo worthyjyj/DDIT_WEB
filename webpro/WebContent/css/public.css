@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+form{
+  border : 5px double hotpink;
+  margin : 20px /*<-좌우 20씩*/ auto; 
+  padding : 30px;
+  width : 500px;
+}
+
+pre{
+	border : 4px double blue;
+	border-left : none;
+	border-right : none; 
+	padding : 10px; 
+	font-size : 1.3em;
+	background-color : skyblue;  
+}
+div.box{
+	border : 1px solid blue; 
+	margin : 5px;
+	padding: 20px;
+	font-size : 1.2em;
+	background : #E1F6FA;
+}
+div.box div{ /*박스안에있는 div*/
+	border : 1px dotted orange;
+	padding :5px;
+	margin : 5px; 
+}
+div.box input[type=button]{
+	width : 80px;
+	height : 40px;
+	background : blue;
+	color : white;
+	padding : 2px 10px;
+	border-radius : 20px;
+	font-size : 1.1em;
+}

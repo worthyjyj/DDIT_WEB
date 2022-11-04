@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="../images/check.png"/>
+<style>
+div{
+ border : 1px dotted blue;
+ margin : 20px;
+ padding : 20px;
+ font-size : 1.5em; 
+}
+</style>
+<script>
+  function proc1(){
+	  today = new Date();
+	  day1 = today.toLocaleString(); 
+	  day2 = today.toLocaleDateString();
+	  
+	  str = today + "<br>";
+	  str += day1 + "<br>";
+	  str += day2 + "<br>";
+	  
+	  document.write(str);
+  }
+</script>
+</head>
+<body>
+<input type="button" value="확인" onclick="proc1()">
+<br><br>
+<div id="result"></div>
+</body>
+</html>
