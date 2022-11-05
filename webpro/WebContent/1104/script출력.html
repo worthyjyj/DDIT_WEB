@@ -65,7 +65,7 @@ value : 입력요소에 출력 - input type=text, textarea
    vres = document.getElementsByTagName('textarea'); //배열: 해당태그가 여러개일 수 있으니까  
    str = today + "\n"; //textarea는 \n으로 줄바꿈
    str += day1 + "\n"; 
-   vres[0].value = str; 
+   vres[0].value = str; //html 태그가 없는 순수한 텍스트는\n으로 줄바꿈함
   
    //--------------------------------
    console.log(str);
